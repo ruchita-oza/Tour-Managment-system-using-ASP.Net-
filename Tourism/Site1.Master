@@ -44,22 +44,22 @@
                          <a class="nav-link active" href="homepage.aspx">Home</a>
                        </li>
                        <li class="nav-item active">
-                         <a class="nav-link" href="#">About Us</a>
+                         <a class="nav-link" href="about_us.aspx">About Us</a>
                        </li>
                        <li class="nav-item active">
-                         <a class="nav-link" href="#">Packages</a>
+                         <a class="nav-link" href="packages.aspx">Packages</a>
                        </li>
                         <li class="nav-item active">
-                         <a class="nav-link" href="#">Gallery</a>
+                         <a class="nav-link" href="gallery.aspx">Gallery</a>
                        </li>
                        <li class="nav-item">
-                         <a class="nav-link">Contact Us</a>
+                         <a class="nav-link" href="contactus.aspx">Contact Us</a>
                        </li>
                      </ul>
 
                       <ul class="navbar-nav">
                          <li class="nav-item active">
-                             <asp:LinkButton CssClass="nav-link" ID="LinkButton4" runat="server">Signup</asp:LinkButton>
+                             <a href="usersignp.aspx"><asp:LinkButton CssClass="nav-link" ID="LinkButton4" runat="server">Signup</asp:LinkButton></a>
                          </li>
                          <li class="nav-item active">
                              <asp:LinkButton CssClass="nav-link" ID="LinkButton1" runat="server">Login</asp:LinkButton>

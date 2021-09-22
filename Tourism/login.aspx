@@ -35,18 +35,18 @@
                         <label>Password</label>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                        </div>
+                        </div class="d-grid gap-2">
                         <div class="form-group">
-                           <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Login" />
+                           <asp:Button class="btn btn-secondary btn-block btn-lg" ID="Button1" runat="server" type="button" Text="Login" />
                         </div>
-                        <div class="form-group">
-                           <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Sign Up" /></a>
+                        <div class="form-group d-grid gap-2">
+                           <a href="usersignup.aspx"><input class="btn btn-dark btn-lg btn-block" id="Button2" type="button" value="Sign Up" /></a>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-            <a href="homepage.aspx"><< Back to Home</a><br><br>
+            <a href="homepage.aspx"><- Back to Home</a><br><br><br /><br />
          </div>
       </div>
    </div>

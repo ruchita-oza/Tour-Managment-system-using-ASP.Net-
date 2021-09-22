@@ -1723,17 +1723,22 @@
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="homepage.aspx" />
+    <Content Include="imgs\adminlogin.png" />
     <Content Include="imgs\adventure.png" />
+    <Content Include="imgs\banner.jpg" />
+    <Content Include="imgs\banner2.jpg" />
     <Content Include="imgs\beaches.png" />
     <Content Include="imgs\bg1.png" />
     <Content Include="imgs\hillstation.png" />
     <Content Include="imgs\login.png" />
+    <Content Include="imgs\signup.png" />
     <Content Include="imgs\tourist_attraction.png" />
     <Content Include="imgs\travel.jfif" />
     <Content Include="imgs\trekking.png" />
     <Content Include="imgs\user_login.png" />
     <Content Include="imgs\weekend_gateways.png" />
     <Content Include="login.aspx" />
+    <Content Include="usersignup.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -1766,6 +1771,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="usersignup.aspx.cs">
+      <DependentUpon>usersignup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usersignup.aspx.designer.cs">
+      <DependentUpon>usersignup.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
