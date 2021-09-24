@@ -1725,19 +1725,64 @@
     <Content Include="homepage.aspx" />
     <Content Include="imgs\adminlogin.png" />
     <Content Include="imgs\adventure.png" />
+    <Content Include="imgs\allpackages\enchantingooty.jpg" />
+    <Content Include="imgs\allpackages\exctingbali.jpg" />
+    <Content Include="imgs\allpackages\manali.jpg" />
+    <Content Include="imgs\allpackages\manalivolvo.jpg" />
+    <Content Include="imgs\allpackages\rajasthan.jpg" />
+    <Content Include="imgs\allpackages\romanticgoa.jpg" />
+    <Content Include="imgs\allpackages\singapore.jpg" />
     <Content Include="imgs\banner.jpg" />
     <Content Include="imgs\banner2.jpg" />
     <Content Include="imgs\beaches.png" />
     <Content Include="imgs\bg1.png" />
+    <Content Include="imgs\card\Agumbe.jpg" />
+    <Content Include="imgs\card\alibaug_1.jpg" />
+    <Content Include="imgs\card\auli.jpg" />
+    <Content Include="imgs\card\bhutan.jpg" />
+    <Content Include="imgs\card\Dubai.jpg" />
+    <Content Include="imgs\card\ee.jpg" />
+    <Content Include="imgs\card\gokarna.jpg" />
+    <Content Include="imgs\card\kerala.jpg" />
+    <Content Include="imgs\card\ladakh.jpg" />
+    <Content Include="imgs\card\leh.jpg" />
+    <Content Include="imgs\card\Maldives.jpg" />
+    <Content Include="imgs\card\pawnalake.jpg" />
+    <Content Include="imgs\card\pune.jpg" />
+    <Content Include="imgs\card\rann_of_kutch.jpg" />
+    <Content Include="imgs\card\Russia.jpg" />
+    <Content Include="imgs\card\southindia.jpg" />
+    <Content Include="imgs\card\srilanka.jpg" />
     <Content Include="imgs\hillstation.png" />
+    <Content Include="imgs\icons\boat.png" />
+    <Content Include="imgs\icons\breakfast.png" />
+    <Content Include="imgs\icons\bus.png" />
+    <Content Include="imgs\icons\camp.png" />
+    <Content Include="imgs\icons\car.png" />
+    <Content Include="imgs\icons\drinks.png" />
+    <Content Include="imgs\icons\favicon.png" />
+    <Content Include="imgs\icons\flights.png" />
+    <Content Include="imgs\icons\guesthouse.png" />
+    <Content Include="imgs\icons\guide.png" />
+    <Content Include="imgs\icons\homestay.png" />
+    <Content Include="imgs\icons\hotel.png" />
+    <Content Include="imgs\icons\insurance.png" />
+    <Content Include="imgs\icons\meals.png" />
+    <Content Include="imgs\icons\sightseeing.png" />
+    <Content Include="imgs\icons\visa.png" />
     <Content Include="imgs\login.png" />
+    <Content Include="imgs\profile.png" />
     <Content Include="imgs\signup.png" />
+    <Content Include="imgs\tourism.png" />
     <Content Include="imgs\tourist_attraction.png" />
     <Content Include="imgs\travel.jfif" />
     <Content Include="imgs\trekking.png" />
     <Content Include="imgs\user_login.png" />
+    <Content Include="imgs\weekendgetaways.jpg" />
     <Content Include="imgs\weekend_gateways.png" />
     <Content Include="login.aspx" />
+    <Content Include="packages.aspx" />
+    <Content Include="userprofile.aspx" />
     <Content Include="usersignup.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -1764,6 +1809,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="packages.aspx.cs">
+      <DependentUpon>packages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="packages.aspx.designer.cs">
+      <DependentUpon>packages.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -1771,6 +1823,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="userprofile.aspx.cs">
+      <DependentUpon>userprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userprofile.aspx.designer.cs">
+      <DependentUpon>userprofile.aspx</DependentUpon>
     </Compile>
     <Compile Include="usersignup.aspx.cs">
       <DependentUpon>usersignup.aspx</DependentUpon>
