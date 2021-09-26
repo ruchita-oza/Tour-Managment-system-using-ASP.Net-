@@ -48,7 +48,7 @@
                         </div>
                      </div>
                      <div class="col-md-6">
-                        <label>Email ID</label>
+                        <label accesskey="unique">Email ID</label>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Email ID" TextMode="Email"></asp:TextBox>
                         </div>
