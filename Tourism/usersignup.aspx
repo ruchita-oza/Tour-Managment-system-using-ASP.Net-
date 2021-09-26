@@ -124,13 +124,7 @@
                   </div>
                    <br />
                   <div class="row">
-                     <div class="col-md-6">
-                        <label>User ID</label>
-                        <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="User ID" ReadOnly="True"></asp:TextBox>
-                        </div>
-                     </div>
-                     <div class="col-md-6">
+                     <div class="col-md-12">
                         <label>Password</label>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
@@ -142,7 +136,7 @@
                      <div class="col-8 mx-auto">
                         <center>
                            <div class="form-group">
-                              <asp:Button class="btn btn-primary btn-secondary btn-lg" ID="Button1" runat="server" Text="Singup" />
+                              <asp:Button class="btn btn-primary btn-secondary btn-lg" ID="Button1" runat="server" Text="Singup" OnClick="Button1_Click" />
                            </div>
                         </center>
                      </div>
