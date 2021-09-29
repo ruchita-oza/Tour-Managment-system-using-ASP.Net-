@@ -10,59 +10,61 @@ using System.Web.UI.WebControls;
 
 namespace Tourism
 {
-    public partial class package_management : System.Web.UI.Page
+    public partial class Category_management : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-        
         protected void Page_Load(object sender, EventArgs e)
         {
             GridView1.DataBind();
         }
 
-        //add button click
+        // add button click
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if (checkIfPackageExists())
+            if (checkIfCategoryExists())
             {
-                Response.Write("<script>alert('Package with this Name, Category and Price Already Exists...! Please add another package...!');</script>");
+                Response.Write("<script>alert('Category with this ID already Exist. You cannot add another category with the same Category ID');</script>");
             }
             else
             {
-                addNewPackage();
+                addNewCategory();
             }
         }
-
-        //update button click
+        // update button click
         protected void Button3_Click(object sender, EventArgs e)
         {
-            if (checkIfPackageExists() == true)
+            if (checkIfCategoryExists())
             {
-                updatePackage();
+                updateCategory();
+
             }
             else
             {
-                Response.Write("<script>alert('Package Doesn't Exists...! Please add another package...!');</script>");
+                Response.Write("<script>alert('Category does not exist');</script>");
             }
         }
-
-        //delete button click
+        // delete button click
         protected void Button4_Click(object sender, EventArgs e)
         {
-            if (checkIfPackageExists() == true)
+            if (checkIfCategoryExists())
             {
-                deletePackage();
+                deleteCategory();
+
             }
             else
             {
-                Response.Write("<script>alert('Package with this Name, Category and Price Doesn't Exists...! Please add another package...!');</script>");
+                Response.Write("<script>alert('Category does not exist');</script>");
             }
         }
-
+        // GO button click
         protected void Button1_Click(object sender, EventArgs e)
         {
             getAuthorByID();
         }
 
+
+
+        // user defined function
         void getAuthorByID()
         {
             try
@@ -73,7 +75,7 @@ namespace Tourism
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * from package_management_tbl where package_id='" + TextBox1.Text.Trim() + "';", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from category_management_tbl where category_id='" + TextBox1.Text.Trim() + "';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -81,14 +83,10 @@ namespace Tourism
                 if (dt.Rows.Count >= 1)
                 {
                     TextBox2.Text = dt.Rows[0][1].ToString();
-                    //TextBox2.Text = dt.Rows[0][1].ToString();
-                    TextBox3.Text = dt.Rows[0][3].ToString();
-                    TextBox4.Text = dt.Rows[0][4].ToString();
-
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid Package ID');</script>");
+                    Response.Write("<script>alert('Invalid Category ID');</script>");
                 }
 
 
@@ -100,7 +98,8 @@ namespace Tourism
             }
         }
 
-        void addNewPackage()
+
+        void deleteCategory()
         {
             try
             {
@@ -110,19 +109,14 @@ namespace Tourism
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO package_management_tbl(package_name,package_category,price,description,images) values(@package_name,@package_category,@price,@description,@images)", con);
-
-                cmd.Parameters.AddWithValue("@package_name", TextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@package_category", DropDownList1.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@price", TextBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@description", TextBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@images", SqlDbType.Image);
+                SqlCommand cmd = new SqlCommand("DELETE from category_management_tbl WHERE category_id='" + TextBox1.Text.Trim() + "'", con);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Package Added Successfully...!');</script>");
+                Response.Write("<script>alert('Category Deleted Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
+
             }
             catch (Exception ex)
             {
@@ -130,7 +124,7 @@ namespace Tourism
             }
         }
 
-        void updatePackage()
+        void updateCategory()
         {
             try
             {
@@ -140,41 +134,13 @@ namespace Tourism
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("UPDATE package_management_tbl SET package_category=@package_category where package_name='" + TextBox2.Text.Trim() + "' or price='" + TextBox3.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("UPDATE category_management_tbl SET author_name=@author_name WHERE category_id='" + TextBox1.Text.Trim() + "'", con);
 
-                //cmd.Parameters.AddWithValue("@package_name", TextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@package_category", DropDownList1.SelectedItem.Value);
-                /*cmd.Parameters.AddWithValue("@price", TextBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@description", TextBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@images", SqlDbType.Image);*/
+                cmd.Parameters.AddWithValue("@category_name", TextBox2.Text.Trim());
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Package Updated Successfully...!');</script>");
-                clearForm();
-                GridView1.DataBind();
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-            }
-        }
-
-        void deletePackage()
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-
-                SqlCommand cmd = new SqlCommand("DELETE FROM package_management_tbl WHERE package_name='" + TextBox2.Text.Trim() + "' AND package_category='" + DropDownList1.SelectedItem.Value + "'", con);
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Response.Write("<script>alert('Package Deleted Successfully...!');</script>");
+                Response.Write("<script>alert('Category Updated Successfully');</script>");
                 clearForm();
                 GridView1.DataBind();
             }
@@ -185,7 +151,7 @@ namespace Tourism
         }
 
 
-        bool checkIfPackageExists()
+        void addNewCategory()
         {
             try
             {
@@ -195,7 +161,36 @@ namespace Tourism
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * from package_management_tbl where package_name='" + TextBox2.Text.Trim() + "' AND package_category='" + DropDownList1.SelectedItem.Value + "' AND price='" + TextBox3.Text.Trim() + "'; ", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO category_management_tbl(category_id,category_name) values(@category_id,@category_name)", con);
+
+                cmd.Parameters.AddWithValue("@category_id", TextBox1.Text.Trim());
+                cmd.Parameters.AddWithValue("@category_name", TextBox2.Text.Trim());
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+                Response.Write("<script>alert('Category added Successfully');</script>");
+                clearForm();
+                GridView1.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
+
+
+
+        bool checkIfCategoryExists()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("SELECT * from category_management_tbl where category_id='" + TextBox1.Text.Trim() + "';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -208,6 +203,8 @@ namespace Tourism
                 {
                     return false;
                 }
+
+
             }
             catch (Exception ex)
             {
@@ -218,12 +215,8 @@ namespace Tourism
 
         void clearForm()
         {
+            TextBox1.Text = "";
             TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-
         }
-
-
     }
 }

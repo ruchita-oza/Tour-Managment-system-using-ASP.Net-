@@ -92,16 +92,12 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p>
                             <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Admin Login</asp:LinkButton>
-                            &nbsp;
+                            &nbsp;                                                       
+                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server" Visible="False" OnClick="LinkButton8_Click">Category Management</asp:LinkButton>
+                            &nbsp;  
                             <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" Visible="False" OnClick="LinkButton11_Click">Package Management</asp:LinkButton>
-                            &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" Visible="False">Publisher Management</asp:LinkButton>
-                            &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server" Visible="False">Book Inventory</asp:LinkButton>
-                            &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server" Visible="False">Book Issuing</asp:LinkButton>
-                            &nbsp;
-                             <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server" Visible="False" OnClick="LinkButton10_Click">Member Management</asp:LinkButton>
+                            &nbsp;                            
+                            <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server" Visible="False" OnClick="LinkButton10_Click">Member Management</asp:LinkButton>
                         </p>
 
                     </div>

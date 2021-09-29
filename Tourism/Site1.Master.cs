@@ -23,11 +23,10 @@ namespace Tourism
                     LinkButton3.Visible = false;     //hello user link button
 
                     LinkButton6.Visible = true;     //admin link button
-                    LinkButton8.Visible = false;    //book inventory link button
-                    LinkButton9.Visible = false;    //booking issue link button
+                    LinkButton8.Visible = false;     //category management link button
                     LinkButton10.Visible = false;   //member management link button
                     LinkButton11.Visible = false;   //package management link button
-                    LinkButton12.Visible = false;   //publisher management link button
+                    
                 }
                 else if(Session["role"].Equals("user"))
                 {
@@ -39,11 +38,10 @@ namespace Tourism
                     LinkButton3.Text = "Hello " + Session["fullname"].ToString();
 
                     LinkButton6.Visible = true;     //admin link button
-                    LinkButton8.Visible = false;    //book inventory link button
-                    LinkButton9.Visible = false;    //booking issue link button
+                    LinkButton8.Visible = false;     //category management link button
                     LinkButton10.Visible = false;   //member management link button
                     LinkButton11.Visible = false;   //package management link button
-                    LinkButton12.Visible = false;   //publisher management link button
+                    
                 }
                 else if(Session["role"].Equals("admin"))
                 {
@@ -55,16 +53,15 @@ namespace Tourism
                     LinkButton3.Text = "Hello " + Session["username"].ToString();
 
                     LinkButton6.Visible = false;    //admin link button
-                    LinkButton8.Visible = true;    //book inventory link button
-                    LinkButton9.Visible = true;    //booking issue link button
+                    LinkButton8.Visible = true;     //category management link button
                     LinkButton10.Visible = true;   //member management link button
                     LinkButton11.Visible = true;   //package management link button
-                    LinkButton12.Visible = true;   //publisher management link button
+                    
                 }
             }
             catch(Exception ex)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+
             }
         }
 
@@ -97,11 +94,8 @@ namespace Tourism
             LinkButton3.Visible = false;     //hello user link button
 
             LinkButton6.Visible = true;     //admin link button
-            LinkButton8.Visible = false;    //author management link button
-            LinkButton9.Visible = false;    //publisher management button
-            LinkButton10.Visible = false;   //book inventory link button
-            LinkButton11.Visible = false;   //booling issue link button
-            LinkButton12.Visible = false;   //member management link button
+            LinkButton10.Visible = false;   //member management link button
+            LinkButton11.Visible = false;   //package management issue link button 
 
             Response.Redirect("homepage.aspx");
         }
@@ -114,6 +108,11 @@ namespace Tourism
         protected void LinkButton10_Click(object sender, EventArgs e)
         {
             Response.Redirect("Admin_member_management.aspx");
+        }
+
+        protected void LinkButton8_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Category_management.aspx");
         }
     }
 }

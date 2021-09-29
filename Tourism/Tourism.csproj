@@ -73,6 +73,7 @@
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
+    <Content Include="Category_management.aspx" />
     <Content Include="css\customstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
@@ -1754,6 +1755,7 @@
     <Content Include="imgs\card\Russia.jpg" />
     <Content Include="imgs\card\southindia.jpg" />
     <Content Include="imgs\card\srilanka.jpg" />
+    <Content Include="imgs\category.png" />
     <Content Include="imgs\hillstation.png" />
     <Content Include="imgs\icons\boat.png" />
     <Content Include="imgs\icons\breakfast.png" />
@@ -1779,7 +1781,6 @@
     <Content Include="imgs\tourist_attraction.png" />
     <Content Include="imgs\travel.jfif" />
     <Content Include="imgs\trekking.png" />
-    <Content Include="imgs\user_login.png" />
     <Content Include="imgs\weekendgetaways.jpg" />
     <Content Include="imgs\weekend_gateways.png" />
     <Content Include="login.aspx" />
@@ -1804,6 +1805,13 @@
     </Compile>
     <Compile Include="Admin_member_management.aspx.designer.cs">
       <DependentUpon>Admin_member_management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Category_management.aspx.cs">
+      <DependentUpon>Category_management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Category_management.aspx.designer.cs">
+      <DependentUpon>Category_management.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>

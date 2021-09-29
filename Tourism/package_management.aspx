@@ -3,7 +3,6 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-            //$('.table1').DataTable();
         });
     </script>
 </asp:Content>
@@ -42,8 +41,17 @@
                             </div>
                         </div>
 
-                        <div class="row">                          
-                            <div class="col-md-12">
+                        <div class="row"> 
+                            <div class="col-md-4">
+                                <label>Package ID</label>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
+                                        <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="Go" OnClick="Button1_Click" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
                                 <label>Package Name</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Package Name"></asp:TextBox>
