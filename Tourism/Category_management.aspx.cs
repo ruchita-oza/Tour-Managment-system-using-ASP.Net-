@@ -134,7 +134,7 @@ namespace Tourism
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("UPDATE category_management_tbl SET author_name=@author_name WHERE category_id='" + TextBox1.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("UPDATE category_management_tbl SET category_name=@category_name WHERE category_id='" + TextBox1.Text.Trim() + "'", con);
 
                 cmd.Parameters.AddWithValue("@category_name", TextBox2.Text.Trim());
 

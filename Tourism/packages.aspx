@@ -6,30 +6,39 @@
 	
 	<section class="Ready">
 		<div class="container">
-			<h2 class="font-weight-bold pt-5" data-toggle="tooltip" data-placement="top" title="International Package">International Holiday Packages</h2>
-			<div class="international owl-carousel">
+			<h2 class="font-weight-bold pt-5" data-toggle="tooltip" data-placement="top" ><%#Eval("package_category") %></h2>
+			<asp:Repeater ID="Repeater1" runat="server">				
+				<ItemTemplate>						
+					<div class="international owl-carousel">
 				
-				<div class="card px-1" data-toggle="tooltip" title="Russia With Almaty">
-					<img class="card-img-top" src="imgs/card/Russia.jpg" alt="Russia">
-					<div class="card-body" style="margin: -15px;">
-						<h6 class="card-title">Packages</h6>
-						<h5 class="card-text font-weight-bold">Russia With Almaty</h5>
-						<span class="Days p-1 text-white d-flex text-center" style="margin-left: 290px; margin-top: -30px; padding-bottom: -10px; ">9D-8N</span>
-						<div class="icons pb-4 d-flex ">
-							<img src="imgs/icons/meals.png" class="mx-1">
-							<img src="imgs/icons/sightseeing.png" class="mx-1">
-							<img src="imgs/icons/hotel.png" class="mx-1">
-							<img src="imgs/icons/visa.png" class="mx-1">
+						<div class="card px-1" data-toggle="tooltip" title="Russia With Almaty">
+							<img class="card-img-top" src="imgs/card/Russia.jpg" alt="Russia">
+							<div class="card-body" style="margin: -15px;">						
+								<h5 class="card-text font-weight-bold"><%#Eval("package_name") %></h5>
+								<span class="Days p-1 text-white d-flex text-center" style="margin-left: 290px; margin-top: -30px; padding-bottom: -10px; ">9D-8N</span>
+								<div class="icons pb-4 d-flex ">
+									<img src="imgs/icons/meals.png" class="mx-1">
+									<img src="imgs/icons/sightseeing.png" class="mx-1">
+									<img src="imgs/icons/hotel.png" class="mx-1">
+									<img src="imgs/icons/visa.png" class="mx-1">
+								</div>
+								<div class="d-flex">
+									<h6 class="font-weight-bold p-1"><%#Eval("price") %> /<span class="text-muted"> person</span></h6>							
+								</div>
+								<div class="row">
+									<div class="col-6">
+										<a href="Packages/packageBooked.aspx" class="btn btn-outline-info">Book Package</a>
+									</div>
+									<div class="col-6">
+										<a href="Packages/packageView.aspx" class="btn btn-outline-info">View Package</a>
+									</div>
+								</div>						
+							</div>
 						</div>
-						<div class="d-flex">
-							<h6 class="font-weight-bold p-1">₹ 78,306 /<span class="text-muted"> person</span></h6>
-							<a href="Packages/russiawithalmaty.aspx" class="btn btn-outline-info" style="margin-left:100px; margin-top:-5px;">Get Quotes</a>
-						</div>
-					</div>
-				</div>
+					</ItemTemplate>
+				</asp:Repeater>
 				
-				
-				<div class="card px-1" data-toggle="tooltip" title="Adventure In Dubai">
+				<!-- <div class="card px-1" data-toggle="tooltip" title="Adventure In Dubai">
 					<img class="card-img-top" src="imgs/card/Dubai.jpg" alt="Dubai">
 					<div class="card-body" style="margin: -15px;">
 						<h6 class="card-title">Packages</h6>
@@ -110,12 +119,12 @@
 					</div>
 				</div>
 				
-			</div>
+			</div> -->
 		</div>
 		
 	</section>
 
-	<!-- =========================Special Packages====================== -->
+	<!-- =========================Special Packages====================== 
 	<section  class="my-5">
 		<div class="pt-5">
 			<h2 class="text-center font-weight-bold">Most Popular Destination</h2>
@@ -300,7 +309,7 @@
 		<div id="gallery"></div>
 	</section>
 
-		<!-- ==========================Ready to Book Packages==================== -->
+		<!-- ==========================Ready to Book Packages==================== 
 	<section class="Ready">
 		<div class="container">
 			<h2 class="font-weight-bold pt-5">Ready to Book Packages</h2>
@@ -413,7 +422,7 @@
 		</div>		
 	</section>
 
-	<!-- ==========================Domestic Holiday Packages==================== -->
+	<!-- ==========================Domestic Holiday Packages====================
 	<section class="Domestic">
 		<div class="container">
 			<h2 class="font-weight-bold pt-5">Domestic Holiday Packages</h2>
@@ -533,5 +542,18 @@
 			</div>
 		</div>
 		<div id="destinations"></div>
-	</section>
+	</section> 
+
+	<div class="col-sm-3 col-md-3">
+		<div class="thumbnail">
+			<img src="imgs/allpackages/rajasthan.jpg" alt="" />
+			<div class="caption">
+				<div class="package_category"> Package category</div>
+				<div class="package_name"> Package Name </div>
+				<div class="package_price">
+					<span class="price_per_night">50,600</span>
+				</div>
+			</div>
+		</div>
+	</div> -->
 </asp:Content>

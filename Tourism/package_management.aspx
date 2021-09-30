@@ -86,7 +86,7 @@
                            <div class="col-md-12">
                                <label>Images</label>
                              <div class="form-group"">
-                                <asp:FileUpload class="form-control" ID="FileUpload1" runat="server" />                                    
+                                <asp:FileUpload class="form-control" ID="btnUpload" Text="Upload" runat="server" onclick="btnUpload_Click" />                                    
                              </div>
                           </div>
                         </div>

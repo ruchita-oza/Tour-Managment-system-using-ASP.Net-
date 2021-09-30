@@ -141,7 +141,7 @@ namespace Tourism
                 cmd.Parameters.AddWithValue("@package_category", DropDownList1.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@price", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@description", TextBox4.Text.Trim());
-                //cmd.Parameters.AddWithValue("@images", SqlDbType.Image);
+                cmd.Parameters.AddWithValue("@images", SqlDbType.Image);
 
                 cmd.ExecuteNonQuery();
                 con.Close();

@@ -15,6 +15,28 @@
     background: #2E2E2E;
 }
 
+/* View packages
+.package_category{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 15px;
+    text-transform: uppercase;
+    font-family: Times New Roman;
+}
+
+.package_name {
+    font-size: 13px;    
+    line-height: 17px;
+    font-family: Times New Roman;
+}
+
+.package_price {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    text-transform: uppercase;
+    font-family: Times New Roman;
+}*/
 /*--------International Packages Card------*/
 .icons img {
     height: 18px !important;
