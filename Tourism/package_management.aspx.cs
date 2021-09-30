@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace Tourism
 {
@@ -16,6 +17,7 @@ namespace Tourism
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            fillCatogoryValues();
             GridView1.DataBind();
         }
 
@@ -63,6 +65,30 @@ namespace Tourism
             getAuthorByID();
         }
 
+        void fillCatogoryValues()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd = new SqlCommand("SELECT category_name from category_management_tbl;", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                DropDownList1.DataSource = dt;
+                DropDownList1.DataValueField = "category_name";
+                DropDownList1.DataBind();           
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
+
         void getAuthorByID()
         {
             try
@@ -80,8 +106,7 @@ namespace Tourism
 
                 if (dt.Rows.Count >= 1)
                 {
-                    TextBox2.Text = dt.Rows[0][1].ToString();
-                    //TextBox2.Text = dt.Rows[0][1].ToString();
+                    TextBox2.Text = dt.Rows[0][1].ToString();                    
                     TextBox3.Text = dt.Rows[0][3].ToString();
                     TextBox4.Text = dt.Rows[0][4].ToString();
 
@@ -116,7 +141,7 @@ namespace Tourism
                 cmd.Parameters.AddWithValue("@package_category", DropDownList1.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@price", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@description", TextBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@images", SqlDbType.Image);
+                //cmd.Parameters.AddWithValue("@images", SqlDbType.Image);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -140,19 +165,20 @@ namespace Tourism
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("UPDATE package_management_tbl SET package_category=@package_category where package_name='" + TextBox2.Text.Trim() + "' or price='" + TextBox3.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("UPDATE package_management_tbl SET package_name=@package_name, package_category=@package_category,price=@price,description=@description,images=@images where package_id='" + TextBox1.Text.Trim() + "'", con);
 
-                //cmd.Parameters.AddWithValue("@package_name", TextBox2.Text.Trim());
+                cmd.Parameters.AddWithValue("@package_name", TextBox2.Text.Trim());
                 cmd.Parameters.AddWithValue("@package_category", DropDownList1.SelectedItem.Value);
-                /*cmd.Parameters.AddWithValue("@price", TextBox3.Text.Trim());
+                cmd.Parameters.AddWithValue("@price", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@description", TextBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@images", SqlDbType.Image);*/
+                cmd.Parameters.AddWithValue("@images", SqlDbType.Image);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
+                GridView1.DataBind();
                 Response.Write("<script>alert('Package Updated Successfully...!');</script>");
                 clearForm();
-                GridView1.DataBind();
+                
             }
             catch (Exception ex)
             {
