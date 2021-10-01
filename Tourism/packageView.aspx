@@ -2,21 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        .packageView{
-            font-size:20px;
-            line-height:25px;
-            font-family:sans-serif;
-            color:#696e80;
-        }
-        .packagePrice{
-            font-size:16px;
-            line-height:17px;
-            font-family:sans-serif;
-            font-weight:600;
-            margin-top:10px;
-        }
-    </style>
     <div class="container my-4">
     <div class="row">
         <div class="col-md-4">

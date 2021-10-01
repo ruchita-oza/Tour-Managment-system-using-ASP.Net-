@@ -1,5 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Category_management.aspx.cs" Inherits="Tourism.Category_management" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+         $(document).ready(function () {
+             $(".table").prepend($("<thead></thead>").append($(this).find("tr:first")))
+                 .DataTable({
+                     paging: true,
+                     info: false,
+
+                     fixedHeader: {
+                         header: true,
+                         footer: true
+                     }
+                 });
+
+         });
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
@@ -77,11 +93,25 @@
                   </div>
                   <div class="row">  
                       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tourismDBConnectionString %>" SelectCommand="SELECT * FROM [category_management_tbl]"></asp:SqlDataSource>
-                     <div class="col">
+                     <div class="clearfix">
                         <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="category_id" DataSourceID="SqlDataSource1">
                             <Columns>
-                                <asp:BoundField DataField="category_id" HeaderText="Category ID" ReadOnly="True" SortExpression="category_id" />
-                                <asp:BoundField DataField="category_name" HeaderText="Category Name" SortExpression="category_name" />
+                                <asp:TemplateField HeaderText="category_id" SortExpression="category_id">
+                                    <EditItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("category_id") %>'></asp:Label>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("category_id") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="category_name" SortExpression="category_name">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("category_name") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("category_name") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
                      </div>

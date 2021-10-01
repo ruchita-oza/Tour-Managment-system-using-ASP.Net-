@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <%--bootstrap css--%>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <%--datatables css--%>
@@ -14,6 +14,7 @@
     <link href="fontawesome/css/all.css" rel="stylesheet" />
     <%--custom css--%>
     <link href="css/customstylesheet.css" rel="stylesheet" />
+    
 
     <%--bootstrap bundle min js--%>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -23,7 +24,8 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <%--datatables js--%>
     <script src="datatables/js/jquery.dataTables.min.js"></script>
-
+    
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

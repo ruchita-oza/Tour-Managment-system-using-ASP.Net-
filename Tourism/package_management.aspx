@@ -1,9 +1,38 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="package_management.aspx.cs" Inherits="Tourism.package_management" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+    <script type="text/javascript">        
+         $(document).ready(function () {
+                $(".table").prepend($("<thead></thead>").append($(this).find("tr:first")))
+                    .DataTable({
+                        paging: true,
+                        info: false,
+
+                        fixedHeader: {
+                            header: true,
+                            footer: true
+                        }
+                    });
+
+         });
+
+
+        function readURL(input) {
+            var $imput = $(this);
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    this.next('img').attr('src', e.target.result);
+                    //$input.next('#imgview').attr('src', e.target.result).show();
+                };
+
+                reader.readAsDataURL(this.get(0).files[0]);
+            }
+        }
+        $("input[type='file']").change(function(){
+            readURL();
         });
+
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -11,6 +40,7 @@
             img {
                   border-radius: 50%;
             }
+
     </style>
     <div class="container">
         <div class="row">
@@ -29,7 +59,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                        <img width="100px" src="imgs/package.png" />        
+                                        <img id="imgview" width="100px" src="All_Packages/package.png" />        
                                 </center>
                             </div>
                         </div>
@@ -85,8 +115,8 @@
 
                            <div class="col-md-12">
                                <label>Images</label>
-                             <div class="form-group"">
-                                <asp:FileUpload class="form-control" ID="btnUpload" Text="Upload" runat="server" onclick="btnUpload_Click" />                                    
+                             <div class="col">
+                                <asp:FileUpload onchange="readURL(this);" class="form-control" ID="FileUpload1" runat="server" />                                    
                              </div>
                           </div>
                         </div>
@@ -125,12 +155,53 @@
                         <div class="row">
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tourismDBConnectionString2 %>" SelectCommand="SELECT * FROM [package_management_tbl]"></asp:SqlDataSource>
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="package_id" DataSourceID="SqlDataSource1">
+                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="package_id" DataSourceID="SqlDataSource1" Width="493px">
                                     <Columns>
-                                        <asp:BoundField DataField="package_id" HeaderText="Package ID" InsertVisible="False" ReadOnly="True" SortExpression="package_id" />
-                                        <asp:BoundField DataField="package_name" HeaderText="Package Name" SortExpression="package_name" />
-                                        <asp:BoundField DataField="package_category" HeaderText="Category" SortExpression="package_category" />
-                                        <asp:BoundField DataField="price" HeaderText="Price" SortExpression="price" />
+                                        <asp:BoundField DataField="package_id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="package_id" />
+                                        
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-lg-10">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("package_name") %>' Font-Bold="True" Font-Size="X-Large"></asp:Label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+
+                                                                    <B>Category:</B>
+                                                                    <asp:Label ID="Label2" runat="server" Font-Bold="False" Text='<%# Eval("package_category") %>'></asp:Label>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+
+                                                                    <B>Description:</B>
+                                                                    <asp:Label ID="Label3" runat="server" Text='<%# Eval("description") %>'></asp:Label>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+
+                                                                   Price:
+                                                                   <asp:Label ID="Label4" runat="server" Font-Bold="True" Text='<%# Eval("price") %>'></asp:Label>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <asp:Image class="img-fluid" ID="Image1" runat="server" ImageUrl='<%# Eval("images") %>' />                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        
                                     </Columns>
                                 </asp:GridView>
                             </div>

@@ -1756,7 +1756,7 @@
     <Content Include="imgs\card\southindia.jpg" />
     <Content Include="imgs\card\srilanka.jpg" />
     <Content Include="imgs\category.png" />
-    <Content Include="imgs\hillstation.png" />
+    <Content Include="All_Packages\hillstation.png" />
     <Content Include="imgs\icons\boat.png" />
     <Content Include="imgs\icons\breakfast.png" />
     <Content Include="imgs\icons\bus.png" />
@@ -1774,7 +1774,7 @@
     <Content Include="imgs\icons\sightseeing.png" />
     <Content Include="imgs\icons\visa.png" />
     <Content Include="imgs\login.png" />
-    <Content Include="imgs\package.png" />
+    <Content Include="All_Packages\package.png" />
     <Content Include="imgs\profile.png" />
     <Content Include="imgs\signup.png" />
     <Content Include="imgs\tourism.png" />
