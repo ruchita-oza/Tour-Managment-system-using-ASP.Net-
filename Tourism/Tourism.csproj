@@ -1785,6 +1785,7 @@
     <Content Include="imgs\weekend_gateways.png" />
     <Content Include="login.aspx" />
     <Content Include="packages.aspx" />
+    <Content Include="packageView.aspx" />
     <Content Include="package_management.aspx" />
     <Content Include="userprofile.aspx" />
     <Content Include="usersignup.aspx" />
@@ -1833,6 +1834,13 @@
     </Compile>
     <Compile Include="packages.aspx.designer.cs">
       <DependentUpon>packages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="packageView.aspx.cs">
+      <DependentUpon>packageView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="packageView.aspx.designer.cs">
+      <DependentUpon>packageView.aspx</DependentUpon>
     </Compile>
     <Compile Include="package_management.aspx.cs">
       <DependentUpon>package_management.aspx</DependentUpon>

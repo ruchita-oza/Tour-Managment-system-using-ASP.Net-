@@ -6,7 +6,7 @@
 	
 	<section class="Ready">
 		<div class="container">
-			<h2 class="font-weight-bold pt-5" data-toggle="tooltip" data-placement="top" ><%#Eval("package_category") %></h2>
+			<h2 class="font-weight-bold pt-5" data-toggle="tooltip" data-placement="top" >International Packages</h2>
 			<asp:Repeater ID="Repeater1" runat="server">				
 				<ItemTemplate>						
 					<div class="international owl-carousel">
@@ -15,7 +15,7 @@
 							<img class="card-img-top" src="imgs/card/Russia.jpg" alt="Russia">
 							<div class="card-body" style="margin: -15px;">						
 								<h5 class="card-text font-weight-bold"><%#Eval("package_name") %></h5>
-								<span class="Days p-1 text-white d-flex text-center" style="margin-left: 290px; margin-top: -30px; padding-bottom: -10px; ">9D-8N</span>
+								<span class="Days p-1 text-white d-flex text-center" style="margin-left: 290px; margin-top: -30px; padding-bottom: -10px; ">1D-1N</span>
 								<div class="icons pb-4 d-flex ">
 									<img src="imgs/icons/meals.png" class="mx-1">
 									<img src="imgs/icons/sightseeing.png" class="mx-1">
