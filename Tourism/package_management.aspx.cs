@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,59 +13,46 @@ namespace Tourism
 {
     public partial class package_management : System.Web.UI.Page
     {
+        string filename;
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-            fillCatogoryValues();
+            fillCategoryValues();
             GridView1.DataBind();
         }
 
-        //add button click
-        protected void Button2_Click(object sender, EventArgs e)
+        // add new package
+        protected void Button1_Click(object sender, EventArgs e)
         {
             if (checkIfPackageExists())
             {
-                Response.Write("<script>alert('Package with this Name, Category and Price Already Exists...! Please add another package...!');</script>");
+                Response.Write("<script>alert('Package with this ID already Exist. You cannot add another Package with the same Package ID & Package Category.');</script>");
             }
             else
             {
-                addNewPackage();
+                addNewPackge();
             }
         }
 
-        //update button click
+        //update package
         protected void Button3_Click(object sender, EventArgs e)
         {
-            if (checkIfPackageExists() == true)
-            {
-                updatePackage();
-            }
-            else
-            {
-                Response.Write("<script>alert('Package Doesn't Exists...! Please add another package...!');</script>");
-            }
+
         }
 
-        //delete button click
-        protected void Button4_Click(object sender, EventArgs e)
+        //delete package
+        protected void Button2_Click(object sender, EventArgs e)
         {
-            if (checkIfPackageExists() == true)
-            {
-                deletePackage();
-            }
-            else
-            {
-                Response.Write("<script>alert('Package with this Name, Category and Price Doesn't Exists...! Please add another package...!');</script>");
-            }
+
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void LinkButton4_Click(object sender, EventArgs e)
         {
-            getAuthorByID();
+
         }
 
-        void fillCatogoryValues()
+        //user defined functions
+        void fillCategoryValues()
         {
             try
             {
@@ -74,142 +61,19 @@ namespace Tourism
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("SELECT category_name from category_management_tbl;", con);
+                SqlCommand cmd = new SqlCommand("SELECT category_name FROM category_management_tbl;", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 DropDownList1.DataSource = dt;
                 DropDownList1.DataValueField = "category_name";
-                DropDownList1.DataBind();           
-
+                DropDownList1.DataBind();
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
         }
-
-        void getAuthorByID()
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-
-                SqlCommand cmd = new SqlCommand("SELECT * from package_management_tbl where package_id='" + TextBox1.Text.Trim() + "';", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                if (dt.Rows.Count >= 1)
-                {
-                    TextBox2.Text = dt.Rows[0][1].ToString();                    
-                    TextBox3.Text = dt.Rows[0][3].ToString();
-                    TextBox4.Text = dt.Rows[0][4].ToString();                   
-
-                }
-                else
-                {
-                    Response.Write("<script>alert('Invalid Package ID');</script>");
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-
-            }
-        }
-
-        void addNewPackage()
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-
-                SqlCommand cmd = new SqlCommand("INSERT INTO package_management_tbl(package_name,package_category,price,description,images) values(@package_name,@package_category,@price,@description,@images)", con);
-
-                cmd.Parameters.AddWithValue("@package_name", TextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@package_category", DropDownList1.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@price", TextBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@description", TextBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@images", SqlDbType.Image);
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Response.Write("<script>alert('Package Added Successfully...!');</script>");
-                clearForm();
-                GridView1.DataBind();
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-            }
-        }
-
-        void updatePackage()
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-
-                SqlCommand cmd = new SqlCommand("UPDATE package_management_tbl SET package_name=@package_name, package_category=@package_category,price=@price,description=@description,images=@images where package_id='" + TextBox1.Text.Trim() + "'", con);
-
-                cmd.Parameters.AddWithValue("@package_name", TextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@package_category", DropDownList1.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@price", TextBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@description", TextBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@images", SqlDbType.Image);
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-                GridView1.DataBind();
-                Response.Write("<script>alert('Package Updated Successfully...!');</script>");
-                clearForm();
-                
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-            }
-        }
-
-        void deletePackage()
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-
-                SqlCommand cmd = new SqlCommand("DELETE FROM package_management_tbl WHERE package_name='" + TextBox2.Text.Trim() + "' AND package_category='" + DropDownList1.SelectedItem.Value + "'", con);
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Response.Write("<script>alert('Package Deleted Successfully...!');</script>");
-                clearForm();
-                GridView1.DataBind();
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-            }
-        }
-
 
         bool checkIfPackageExists()
         {
@@ -221,7 +85,7 @@ namespace Tourism
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * from package_management_tbl where package_name='" + TextBox2.Text.Trim() + "' AND package_category='" + DropDownList1.SelectedItem.Value + "' AND price='" + TextBox3.Text.Trim() + "'; ", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from package_management_tbl where package_id='" + TextBox1.Text.Trim() + "' OR package_category='"+ DropDownList1.SelectedItem.Value + "';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -234,6 +98,8 @@ namespace Tourism
                 {
                     return false;
                 }
+
+
             }
             catch (Exception ex)
             {
@@ -241,15 +107,46 @@ namespace Tourism
                 return false;
             }
         }
+        void addNewPackge()
+        {
+            string filepath = "~/AllPackages/package.png";
+            string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
+            FileUpload1.SaveAs(Server.MapPath("All_Packages/" + filename));
+            filepath = "~/All_Packages/" + filename;
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
 
+                SqlCommand cmd = new SqlCommand("INSERT INTO package_management_tbl(package_id,package_name,package_category,price,description,images) values(@package_id,@package_name,@package_category,@price,@description,@images)", con);
+
+                cmd.Parameters.AddWithValue("@package_id", TextBox1.Text.Trim());
+                cmd.Parameters.AddWithValue("@package_name", TextBox2.Text.Trim());                
+                cmd.Parameters.AddWithValue("@package_category", DropDownList1.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@price", TextBox3.Text.Trim());
+                cmd.Parameters.AddWithValue("@description", TextBox6.Text.Trim());
+                cmd.Parameters.AddWithValue("@images", filepath);
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+                Response.Write("<script>alert('Package added Successfully');</script>");
+                clearForm();
+                GridView1.DataBind();
+            }
+            catch(Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
         void clearForm()
         {
+            TextBox1.Text = "";
             TextBox2.Text = "";
             TextBox3.Text = "";
-            TextBox4.Text = "";
-
+            TextBox6.Text = "";
         }
-
-
     }
 }
