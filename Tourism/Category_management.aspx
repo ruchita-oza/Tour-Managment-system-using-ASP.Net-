@@ -53,7 +53,7 @@
                      </div>
                      <div class="col-4">
                         <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Text="Delete" OnClick="Button4_Click" />
-                     </div>
+                     </div>sxe  dd    
                   </div>
                </div>
             </div>
