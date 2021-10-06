@@ -38,7 +38,7 @@ namespace Tourism
                     {
                         DataTable dt = new DataTable();
                         da.Fill(dt);
-                       // Repeater1.DataSource = dt;
+                       //Repeater1.DataSource = dt;
                        // Repeater1.DataBind();
                     }
                 }
