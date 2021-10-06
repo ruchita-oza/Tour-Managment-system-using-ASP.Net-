@@ -55,7 +55,7 @@
                      <div class="col-md-8">
                         <label>Category Name</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Author Name"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Category Name"></asp:TextBox>
                         </div>
                      </div>
                   </div>

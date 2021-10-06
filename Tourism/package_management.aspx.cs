@@ -137,7 +137,7 @@ namespace Tourism
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * from package_management_tbl where package_id='" + TextBox1.Text.Trim() + "' OR package_category='"+ DropDownList1.SelectedItem.Value + "';", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from package_management_tbl where package_id='" + TextBox1.Text.Trim() + "' OR package_name='"+ TextBox2.Text.Trim() + "';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

@@ -5,14 +5,14 @@
 	<!-- ==========================International Holiday Packages==================== -->
 	
 	<section class="Ready">
-		<div class="container">
-			<h2 class="font-weight-bold pt-5" data-toggle="tooltip" data-placement="top" >International Packages</h2>
-			<asp:Repeater ID="Repeater1" runat="server">				
+		<div class="container">	
+			<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="package_category" DataValueField="package_category" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>            
+            <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:tourismDBConnectionString2 %>' SelectCommand="SELECT DISTINCT [package_category] FROM [package_management_tbl]"></asp:SqlDataSource>
+            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">				
 				<ItemTemplate>						
-					<div class="international owl-carousel">
-				
-						<div class="card px-1" data-toggle="tooltip" title="Russia With Almaty">
-							<img class="card-img-top" src="imgs/card/Russia.jpg" alt="Russia">
+					<div class="international owl-carousel">				
+						<div class="card px-1" data-toggle="tooltip" title="Russia With Almaty">							
+								<asp:Image ID="Image1" class="img-fliud p-2" runat="server" ImageUrl='<%# Eval("images") %>' />                          
 							<div class="card-body" style="margin: -15px;">						
 								<h5 class="card-text font-weight-bold"><%#Eval("package_name") %></h5>
 								<span class="Days p-1 text-white d-flex text-center" style="margin-left: 290px; margin-top: -30px; padding-bottom: -10px; ">1D-1N</span>
@@ -20,7 +20,7 @@
 									<img src="imgs/icons/meals.png" class="mx-1">
 									<img src="imgs/icons/sightseeing.png" class="mx-1">
 									<img src="imgs/icons/hotel.png" class="mx-1">
-									<img src="imgs/icons/visa.png" class="mx-1">
+									<img src="imgs/icons/visa.png" class="mx-1">w
 								</div>
 								<div class="d-flex">
 									<h6 class="font-weight-bold p-1"><%#Eval("price") %> /<span class="text-muted"> person</span></h6>							
@@ -37,6 +37,11 @@
 						</div>
 					</ItemTemplate>
 				</asp:Repeater>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tourismDBConnectionString2 %>" SelectCommand="SELECT * FROM [package_management_tbl]">
+            </asp:SqlDataSource>
+			</div>		
+	</section>
+
 				
 				<!-- <div class="card px-1" data-toggle="tooltip" title="Adventure In Dubai">
 					<img class="card-img-top" src="imgs/card/Dubai.jpg" alt="Dubai">
@@ -120,9 +125,6 @@
 				</div>
 				
 			</div> -->
-		</div>
-		
-	</section>
 
 	<!-- =========================Special Packages====================== 
 	<section  class="my-5">

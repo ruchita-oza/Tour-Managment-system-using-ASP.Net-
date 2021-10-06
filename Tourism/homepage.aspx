@@ -46,37 +46,22 @@
     </section>
 
         <section>
-              <div class="container">
-
+              <div class="container">                 
                          <div class="row">
-                            <div class="col-md-4">
-                               <center>
-                                  <a href="packages.aspx">
-                                       <asp:image id="img" runat="server" imageurl="imgs/adventure.png" />
-                                  </a>
-                                  <h4>International Packages</h4>   
-                                   <p class="text-justify">International travel the frenzy of going on a world tour is not lost on most avid Indian travellers. It is time to scour world tour packages who have with them a host of international tour package, depending on your choice of destination and the season in which you plan to travel.</p>
-                               </center>
-                            </div>
-                            <div class="col-md-4">
-                               <center>
-                                  <a href="packages.aspx">
-                                       <asp:image id="Image1" runat="server" imageurl="imgs/adventure.png" />
-                                  </a>
-                                  <h4>National Packages</h4>
-                                  <p class="text-justify">You can now choose from an array of holiday packages in India that span across the length and breadth of the country, taking you into breathtaking tea estates, hill resorts to splendid backwater retreats. By booking your India tour, you get to customise your holiday to suit your requirement.</p>
-                               </center>
-                            </div>
-                            <div class="col-md-4">
-                               <center>
-                                   <a href="packages.aspx">
-                                       <asp:image id="Image2" runat="server" imageurl="imgs/adventure.png" />
-                                  </a>
-                                  <h4>Family Packages</h4>
-                                  <p class="text-justify">The list of top family holiday packages in India. Be it any part of the country or any season of the year our packages give you the best options of embarking on an enjoyable family vacation to these destinations. You are welcome to explore the details of these holiday packages here.</p>
-                               </center>
-                            </div>
-                         </div>
+                              <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">				
+				                <ItemTemplate>		
+                                    <div class="col-md-4">
+                                       <center>
+                                          <a href="packages.aspx?category=<%#Eval("category_name") %>">
+                                               <asp:image id="img" runat="server" imageurl="imgs/adventure.png" />
+                                          </a>
+                                          <h4><%#Eval("category_name") %></h4>                                              
+                                       </center>
+                                    </div> 
+                                </ItemTemplate>
+				            </asp:Repeater>
+                        </div>                        
+                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tourismDBConnectionString %>" SelectCommand="SELECT * FROM [category_management_tbl]"></asp:SqlDataSource>
               </div>            
            </section>
 </asp:Content>
