@@ -31,9 +31,10 @@
                                 <asp:Label ID="Label4" runat="server" Font-Italic="True" Text='<%# Eval("description") %>'></asp:Label>
                             </div>                            
                         </div>   
+                        <br>   
                     </br>
                         <div class="col-6">
-			                <a href="Packages/packageBooked.aspx" class="btn btn-secondary col-my-4 mx-3">Book Package</a>
+			                <a href="BookedPackage.aspx?package_id=<%# Eval("package_id") %>" class="btn btn-outline-info">Book Package</a>
 			            </div>
                     </div>
                 </div>

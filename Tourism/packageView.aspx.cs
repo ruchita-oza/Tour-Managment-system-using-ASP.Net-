@@ -28,7 +28,7 @@ namespace Tourism
             }
             else
             {
-                Response.Redirect("packages.aspx");
+                Response.Redirect("homepage.aspx");
             }
         }
 
@@ -48,6 +48,6 @@ namespace Tourism
                     }
                 }
             }
-        }
+        }       
     }
 }

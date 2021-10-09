@@ -25,7 +25,7 @@
 								</div>
 								<div class="row">
 									<div class="col-6">
-										<a href="Packages/packageBooked.aspx" class="btn btn-outline-info">Book Package</a>
+										<a href='BookedPackage.aspx?package_id=<%# Eval("package_id") %>' class="btn btn-outline-info">Book Package</a>
 									</div>
 									<div class="col-6">
 										<a href='packageView.aspx?package_id=<%# Eval("package_id") %>' class="btn btn-outline-info">View Package</a>
