@@ -52,13 +52,8 @@
                        </li>
                        <li class="nav-item active">
                          <a class="nav-link" href="packages.aspx">Packages</a>
-                       </li>
-                        <li class="nav-item active">
-                         <a class="nav-link" href="gallery.aspx">Gallery</a>
-                       </li>
-                       <li class="nav-item">
-                         <a class="nav-link" href="contactus.aspx">Contact Us</a>
-                       </li>
+                       </li>                       
+                       
                      </ul>
 
                       <ul class="navbar-nav">

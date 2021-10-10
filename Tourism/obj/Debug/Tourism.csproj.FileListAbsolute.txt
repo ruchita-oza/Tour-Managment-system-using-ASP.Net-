@@ -112,7 +112,6 @@ D:\Sem_5\WDDN\Toursim\Tourism\bin\roslyn\VBCSCompiler.exe
 D:\Sem_5\WDDN\Toursim\Tourism\bin\roslyn\VBCSCompiler.exe.config
 D:\Sem_5\WDDN\Toursim\Tourism\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Sem_5\WDDN\Toursim\Tourism\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Sem_5\WDDN\Toursim\Tourism\obj\Debug\Tourism.csproj.CopyComplete
 D:\Sem_5\WDDN\Toursim\Tourism\obj\Debug\Tourism.dll
 D:\Sem_5\WDDN\Toursim\Tourism\obj\Debug\Tourism.pdb
 D:\Sem_5\WDDN\Toursim\Tourism\obj\Debug\Tourism.csproj.AssemblyReference.cache
