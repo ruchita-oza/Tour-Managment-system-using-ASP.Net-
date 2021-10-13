@@ -114,5 +114,10 @@ namespace Tourism
         {
             Response.Redirect("Category_management.aspx");
         }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("userprofile.aspx");
+        }
     }
 }

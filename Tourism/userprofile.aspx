@@ -1,11 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="userprofile.aspx.cs" Inherits="Tourism.userprofile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">        
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first")))
+                .DataTable({
+                    paging: true,
+                    info: false,
+                    fixedHeader: {
+                        header: true,
+                        footer: true
+                    }
+                });
+        });       
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
       <div class="row">
          <div class="col-md-5">
-            <div class="card">
+            <div class="card-colum">
                <div class="card-body">
                   <div class="row">
                      <div class="col">
@@ -148,7 +161,7 @@
                      <div class="col-8 mx-auto">
                         <center>
                            <div class="form-group">
-                              <asp:Button class="btn btn-secondary btn-block btn-lg" ID="Button1" runat="server" Text="Update" />
+                              <asp:Button class="btn btn-secondary btn-block btn-lg" ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
                            </div>
                         </center>
                      </div>
@@ -158,7 +171,7 @@
             <a href="homepage.aspx"><< Back to Home</a><br><br>
          </div>
          <div class="col-md-7">
-            <div class="card">
+            <div class="card-column">
                <div class="card-body">
                   <div class="row">
                      <div class="col">
@@ -182,7 +195,24 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="member_id" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                            <Columns>
+                                <asp:BoundField DataField="member_id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="member_id" />
+                                <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
+                                <asp:BoundField DataField="email" HeaderText="Email ID" SortExpression="email" />
+                                <asp:BoundField DataField="password" HeaderText="Password" SortExpression="password" />
+                                <asp:BoundField DataField="account_status" HeaderText="Account Status" SortExpression="account_status" />
+                            </Columns>
+                            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                            <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                            <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                            <SortedDescendingHeaderStyle BackColor="#242121" />
+                         </asp:GridView>
+                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tourismDBConnectionString2 %>" SelectCommand="SELECT [member_id], [full_name], [email], [password], [account_status] FROM [member_signup_tbl]"></asp:SqlDataSource>
                      </div>
                   </div>
                </div>

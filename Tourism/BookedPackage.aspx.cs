@@ -13,7 +13,7 @@ namespace Tourism
     public partial class BookedPackage : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-        static int total = 0;
+        //static int total = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(Request.QueryString["package_id"]);
