@@ -18,7 +18,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+    <div class="container shadow p-3 mb-5 bg-body rounded">
       <div class="row">
          <div class="col-md-5">
             <div class="card-column">
@@ -48,7 +48,6 @@
                         <div class="form-group">
                            <div class="input-group">
                               <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
-                              <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="Go" OnClick="Button1_Click" />
                            </div>
                         </div>
                      </div>
@@ -69,7 +68,7 @@
                      </div>
                      <div class="col-4">
                         <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Text="Delete" OnClick="Button4_Click" />
-                     </div>sxe  dd    
+                     </div>   
                   </div>
                </div>
             </div>

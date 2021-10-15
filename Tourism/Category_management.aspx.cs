@@ -27,7 +27,14 @@ namespace Tourism
             }
             else
             {
-                addNewCategory();
+                try
+                {
+                    addNewCategory();
+                }
+                catch 
+                {
+                    Response.Write("<script>alert('unknown error');</script>");
+                }
             }
         }
         // update button click

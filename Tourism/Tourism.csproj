@@ -69,6 +69,15 @@
   <ItemGroup>
     <Content Include="AdminLogin.aspx" />
     <Content Include="Admin_member_management.aspx" />
+    <Content Include="All_Packages\DalLake.jpg" />
+    <Content Include="All_Packages\dalLake.png" />
+    <Content Include="All_Packages\goa.png" />
+    <Content Include="All_Packages\kerala.jpg" />
+    <Content Include="All_Packages\manali.jpg" />
+    <Content Include="All_Packages\rajasthan.jpg" />
+    <Content Include="All_Packages\romanticgoa.jpg" />
+    <Content Include="All_Packages\shrinagar.jpg" />
+    <Content Include="All_Packages\singapore.jpg" />
     <Content Include="BookedPackage.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />

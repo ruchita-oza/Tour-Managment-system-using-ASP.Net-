@@ -3,13 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">	
 	<section class="Ready">
-		<div class="container">	
+		<div class="container shadow-sm p-3 mb-5 bg-body rounded">	
 			<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="package_category" DataValueField="package_category" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>            
             <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:tourismDBConnectionString2 %>' SelectCommand="SELECT DISTINCT [package_category] FROM [package_management_tbl]"></asp:SqlDataSource>
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">				
-				<ItemTemplate>						
-					<div class="international owl-carousel">				
-						<div class="card px-1" data-toggle="tooltip" title="Russia With Almaty">							
+				<ItemTemplate>					
+					<div class="international owl-carousel mb-5 p-3">				
+						<div class="card px-1 shadow p-3" data-toggle="tooltip" title="Russia With Almaty">							
 								<asp:Image ID="Image1" class="img-fliud p-2" runat="server" ImageUrl='<%# Eval("images") %>' />                          
 							<div class="card-body" style="margin: -15px;">						
 								<h5 class="card-text font-weight-bold"><%#Eval("package_name") %></h5>

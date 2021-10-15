@@ -33,7 +33,7 @@
             border-radius: 50%;
         }
     </style>
-    <div class="container" >
+    <div class="container shadow p-3 mb-5 bg-body rounded" >
         <div class="row">
             <div class="col-md-5">
                     <div class="row">
@@ -60,13 +60,13 @@
                             <asp:FileUpload onchange="readURL(this);" class="form-control" ID="FileUpload1" runat="server" />
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row p-2">
                         <div class="col-md-4">
                             <label>Package ID</label>
-                            <div class="form-group">
+                            <div class="form-group p-2 ">
                                 <div class="input-group">                                    
                                     <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
-                                    <asp:Button class="form-control btn btn-primary" ID="Button4" runat="server" Text=" Go" OnClick="Button4_Click" />
+                                      <asp:Button class=" form-control btn btn-outline-primary p-4" ID="Button4" runat="server" Text=" Go" OnClick="Button4_Click" ></asp:Button>
                                 </div>
                             </div>
                         </div>
@@ -111,13 +111,13 @@
                     <div class="row">
 
                         <div class="col-md-3">
-                            <asp:Button ID="Button1" class="btn btn-lg btn-block btn-success" runat="server" Text="Add" OnClick="Button1_Click" />
+                            <asp:Button ID="Button1" class="btn rounded-pill  btn-block btn-success" runat="server" Text="Add" OnClick="Button1_Click" />
                         </div>
                         <div class="col-md-3">
-                            <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Text="Update" OnClick="Button3_Click" />
+                            <asp:Button ID="Button3" class="btn rounded-pill  btn-block btn-warning" runat="server" Text="Update" OnClick="Button3_Click" />
                         </div>
                         <div class="col-md-3">
-                            <asp:Button ID="Button2" class="btn btn-lg btn-block btn-danger" runat="server" Text="Delete" OnClick="Button2_Click" />
+                            <asp:Button ID="Button2" class="btn rounded-pill  btn-block btn-danger" runat="server" Text="Delete" OnClick="Button2_Click" />
                         </div>
                     </div>
 

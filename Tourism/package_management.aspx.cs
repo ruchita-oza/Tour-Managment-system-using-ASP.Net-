@@ -243,10 +243,12 @@ namespace Tourism
          
         void addNewPackge()
         {
-            string filepath = "~/AllPackages/package.png";
-            string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
-            FileUpload1.SaveAs(Server.MapPath("All_Packages/" + filename));
-            filepath = "~/All_Packages/" + filename;
+            //string filepath = "~/AllPackages/package.png";
+            // string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
+            // FileUpload1.SaveAs(Server.MapPath("All_Packages/" + filename));
+            //filepath = "~/All_Packages/" + filename;
+            string filename = Path.GetFileName(FileUpload1.FileName);
+            FileUpload1.SaveAs(Server.MapPath("~/All_Packages/") + filename);
             try
             {
                 SqlConnection con = new SqlConnection(strcon);
@@ -262,7 +264,7 @@ namespace Tourism
                 cmd.Parameters.AddWithValue("@package_category", DropDownList1.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@price", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@description", TextBox6.Text.Trim());
-                cmd.Parameters.AddWithValue("@images", filepath);
+                cmd.Parameters.AddWithValue("@images", Server.MapPath("~/All_Packages/") + filename);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
