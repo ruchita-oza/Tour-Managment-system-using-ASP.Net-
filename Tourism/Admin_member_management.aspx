@@ -1,9 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Admin_member_management.aspx.cs" Inherits="Tourism.Admin_member_management" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
-      $(document).ready(function () {
-          $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-      });
+         $(document).ready(function () {
+             $(".table").prepend($("<thead></thead>").append($(this).find("tr:first")))
+                 .DataTable({
+                     paging: true,
+                     info: false,
+
+                     fixedHeader: {
+                         header: true,
+                         footer: true
+                     }
+                 });
+
+         });
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
