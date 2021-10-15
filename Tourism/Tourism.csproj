@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AdminLogin.aspx" />
     <Content Include="Admin_member_management.aspx" />
+    <Content Include="BookedPackage.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
@@ -1806,6 +1807,13 @@
     </Compile>
     <Compile Include="Admin_member_management.aspx.designer.cs">
       <DependentUpon>Admin_member_management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookedPackage.aspx.cs">
+      <DependentUpon>BookedPackage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookedPackage.aspx.designer.cs">
+      <DependentUpon>BookedPackage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Category_management.aspx.cs">
       <DependentUpon>Category_management.aspx</DependentUpon>

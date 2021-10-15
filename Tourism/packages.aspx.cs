@@ -15,10 +15,16 @@ namespace Tourism
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+           if (!IsPostBack)
             {
+                string category = Request.QueryString["category"];
+
+                if (category != null)
+                    SqlDataSource1.SelectCommand = "SELECT * FROM [package_management_tbl] WHERE ([package_category] = '" + category + "');";
+
                 BindPackageRepeater();
             }
+           
         }
 
         private void BindPackageRepeater()
@@ -32,11 +38,18 @@ namespace Tourism
                     {
                         DataTable dt = new DataTable();
                         da.Fill(dt);
-                        Repeater1.DataSource = dt;
-                        Repeater1.DataBind();
+                       //Repeater1.DataSource = dt;
+                       // Repeater1.DataBind();
                     }
                 }
             }
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlDataSource1.SelectCommand = "SELECT * FROM [package_management_tbl] WHERE ([package_category] = '" + DropDownList1.SelectedValue + "');";
+            BindPackageRepeater();
+
         }
     }
 }

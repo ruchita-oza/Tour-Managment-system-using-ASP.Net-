@@ -6,7 +6,7 @@
      <div class="container">
       <div class="row">
          <div class="col-md-6 mx-auto">
-            <div class="card">
+             <div class="card-column">
                <div class="card-body">
                   <div class="row">
                      <div class="col">
@@ -36,7 +36,8 @@
                         <label>Password</label>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                        </div class="d-grid gap-2">
+                        </div >
+                         <br />
                         <div class="form-group">
                            <asp:Button class="btn btn-secondary btn-block btn-lg" ID="Button1" runat="server" type="button" Text="Login" OnClick="Button1_Click" />
                         </div>
@@ -46,7 +47,7 @@
             </div>
             <a href="homepage.aspx"><- Back to Home</a><br><br><br /><br />
          </div>
-      </div>
+    </div>
    </div>
 
 </asp:Content>

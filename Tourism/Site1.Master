@@ -43,22 +43,17 @@
                 </button>
 
                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <ul class="navbar-nav me-auto mb-2 ">
                        <li class="nav-item active">
                          <a class="nav-link active" href="homepage.aspx">Home</a>
                        </li>
                        <li class="nav-item active">
                          <a class="nav-link" href="about_us.aspx">About Us</a>
                        </li>
-                       <li class="nav-item active">
-                         <a class="nav-link" href="packages.aspx">Packages</a>
-                       </li>
                         <li class="nav-item active">
-                         <a class="nav-link" href="gallery.aspx">Gallery</a>
-                       </li>
-                       <li class="nav-item">
-                         <a class="nav-link" href="contactus.aspx">Contact Us</a>
-                       </li>
+                             <asp:LinkButton CssClass="nav-link" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click" >Packages</asp:LinkButton>
+                         </li>                      
+                       
                      </ul>
 
                       <ul class="navbar-nav">
@@ -72,7 +67,7 @@
                              <asp:LinkButton CssClass="nav-link" ID="LinkButton2" runat="server" Visible="False" OnClick="LinkButton2_Click">Logout</asp:LinkButton>
                          </li>
                           <li class="nav-item active">
-                             <asp:LinkButton CssClass="nav-link" ID="LinkButton3" runat="server" Visible="False">Hello User</asp:LinkButton>
+                             <asp:LinkButton CssClass="nav-link" ID="LinkButton3" runat="server" Visible="False" OnClick="LinkButton3_Click">Hello User</asp:LinkButton>
                          </li>
                      </ul>
                  </div>

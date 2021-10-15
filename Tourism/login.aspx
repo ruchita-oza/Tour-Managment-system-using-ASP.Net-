@@ -4,9 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container">
       <div class="row">
-         <div class="col-md-6 mx-auto">
-            <div class="card">
-               <div class="card-body">
+         <div class="col-md-6 mx-auto">            
                   <div class="row">
                      <div class="col">
                         <center>
@@ -54,6 +52,4 @@
             </div>
             <a href="homepage.aspx"><- Back to Home</a><br><br><br /><br />
          </div>
-      </div>
-   </div>
 </asp:Content>

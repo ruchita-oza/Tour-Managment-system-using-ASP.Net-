@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row">
          <div class="col-md-5">
-            <div class="card">
+            <div class="card-column">
                <div class="card-body">
                   <div class="row">
                      <div class="col">
@@ -55,7 +55,7 @@
                      <div class="col-md-8">
                         <label>Category Name</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Author Name"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Category Name"></asp:TextBox>
                         </div>
                      </div>
                   </div>
@@ -77,7 +77,7 @@
             <br>
          </div>
          <div class="col-md-7">
-            <div class="card">
+            <div class="card-column">
                <div class="card-body">
                   <div class="row">
                      <div class="col">
