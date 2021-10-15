@@ -72,7 +72,7 @@ namespace Tourism
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Details submitted..! Please Proceed to make Payment');</script>");
+                Response.Write("<script>alert('Your Package is BOOKED...! Thanks For visiting our website..:)');</script>");
             }
             catch (Exception ex)
             {

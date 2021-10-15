@@ -18,6 +18,7 @@ namespace Tourism
                 {
                     LinkButton1.Visible = true;     //user login link button
                     LinkButton4.Visible = true;     //sign up link button
+                    LinkButton5.Visible = false;     //Packages link button
 
                     LinkButton2.Visible = false;     //logout link button
                     LinkButton3.Visible = false;     //hello user link button
@@ -32,6 +33,7 @@ namespace Tourism
                 {
                     LinkButton1.Visible = false;     //user login link button
                     LinkButton4.Visible = false;     //sign up link button
+                    LinkButton5.Visible = true;     //Packages link button
 
                     LinkButton2.Visible = true;     //logout link button
                     LinkButton3.Visible = true;     //hello user link button
@@ -47,6 +49,7 @@ namespace Tourism
                 {
                     LinkButton1.Visible = false;     //user login link button
                     LinkButton4.Visible = false;     //sign up link button
+                    LinkButton5.Visible = true;     //Packages link button
 
                     LinkButton2.Visible = true;     //logout link button
                     LinkButton3.Visible = true;     //hello user link button
@@ -118,6 +121,11 @@ namespace Tourism
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
             Response.Redirect("userprofile.aspx");
+        }
+
+        protected void LinkButton5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("packages.aspx");
         }
     }
 }

@@ -50,9 +50,9 @@
                        <li class="nav-item active">
                          <a class="nav-link" href="about_us.aspx">About Us</a>
                        </li>
-                       <li class="nav-item active">
-                         <a class="nav-link" href="packages.aspx">Packages</a>
-                       </li>                       
+                        <li class="nav-item active">
+                             <asp:LinkButton CssClass="nav-link" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click" >Packages</asp:LinkButton>
+                         </li>                      
                        
                      </ul>
 
