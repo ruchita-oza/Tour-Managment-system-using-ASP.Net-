@@ -17,7 +17,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
+    <div class="container shadow p-3 mb-5 bg-body rounded">
       <div class="row">
          <div class="col-md-5">
             <div class="card-column">
@@ -44,12 +44,10 @@
                   <div class="row">
                      <div class="col-md-3">
                         <label>Member ID</label>
-                        <div class="form-group">
-                           <div class="input-group">
-                              <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Member ID"></asp:TextBox>
+                        <div class="form-group input-group-text">                          
+                              <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
                               <asp:LinkButton class="btn btn-primary" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click"><i class="fas fa-check-circle"></i></asp:LinkButton>
-                           </div>
-                        </div>
+                        </div>                       
                      </div>
                      <div class="col-md-4">
                         <label>Full Name</label>
@@ -59,16 +57,15 @@
                      </div>
                      <div class="col-md-5">
                         <label>Account Status</label>
-                        <div class="form-group">
-                           <div class="input-group">
+                        <div class="form-group">                          
                               <asp:TextBox CssClass="form-control mr-1" ID="TextBox7" runat="server" placeholder="Account Status" ReadOnly="True"></asp:TextBox>
                               <asp:LinkButton class="btn btn-success mr-1" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click"><i class="fas fa-check-circle"></i></asp:LinkButton>
-                              <asp:LinkButton class="btn btn-warning mr-1" ID="LinkButton2" runat="server"><i class="far fa-pause-circle"></i></asp:LinkButton>
-                              <asp:LinkButton class="btn btn-danger mr-1" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click"><i class="fas fa-times-circle"></i></asp:LinkButton>
-                           </div>
-                        </div>
+                              <asp:LinkButton class="btn btn-warning mr-1" ID="LinkButton2" margin="auto" runat="server"><i class="far fa-pause-circle"></i></asp:LinkButton>
+                              <asp:LinkButton class="btn btn-danger mr-1" ID="LinkButton3" margin="auto" runat="server" OnClick="LinkButton3_Click"><i class="fas fa-times-circle"></i></asp:LinkButton>
+                        </div>                        
                      </div>
                   </div>
+
                   <div class="row">
                      <div class="col-md-3">
                         <label>DOB</label>

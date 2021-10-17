@@ -45,10 +45,11 @@
                   <div class="row">
                      <div class="col-md-4">
                         <label>Category ID</label>
-                        <div class="form-group">
-                           <div class="input-group">
+                        <div class="form-group input-group-text">
+                          
                               <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
-                           </div>
+                               <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text=" Go" OnClick="Button1_Click" ></asp:Button>
+                         
                         </div>
                      </div>
                      <div class="col-md-8">

@@ -62,13 +62,11 @@
                     </div>
                     <div class="row p-2">
                         <div class="col-md-4">
-                            <label>Package ID</label>
-                            <div class="form-group p-2 ">
-                                <div class="input-group">                                    
-                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
-                                      <asp:Button class=" form-control btn btn-outline-primary p-4" ID="Button4" runat="server" Text=" Go" OnClick="Button4_Click" ></asp:Button>
-                                </div>
-                            </div>
+                            <label>Package ID</label>  
+                            <div class="form-group input-group-text">                                                                
+                                <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
+                                <asp:Button class="btn btn-primary" ID="Button4" runat="server" Text=" Go" OnClick="Button4_Click" ></asp:Button>
+                            </div>                      
                         </div>
                         <div class="col-md-8">
                             <label>Package Name</label>
@@ -109,7 +107,6 @@
                     <br />
                     <br />
                     <div class="row">
-
                         <div class="col-md-3">
                             <asp:Button ID="Button1" class="btn rounded-pill  btn-block btn-success" runat="server" Text="Add" OnClick="Button1_Click" />
                         </div>
