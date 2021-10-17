@@ -24,7 +24,7 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <%--datatables js--%>
     <script src="datatables/js/jquery.dataTables.min.js"></script>
-    
+     <link rel="stylesheet" href="css/SiteMaster.css"/>
     
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -32,7 +32,7 @@
 <body>
     <form id="form1" runat="server">
          <div>
-             <nav class="navbar navbar-expand-lg navbar-light">
+             <nav class="navbar navbar-expand-lg navbar-light m-1 pe-auto shadow-lg">
                  <a  class="navbar-brand" href="#">
                      <img src="imgs/travel.jfif" width="30" height="30" />
                      Thirst_For_Travel  

@@ -3,14 +3,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-     <div class="container shadow p-3 mb-5 bg-body rounded">
+     <div class="container shadow-sm p-3 mb-5 bg-body rounded">
       <div class="row">
          <div class="col-md-6 mx-auto">
              <div class="card-column">
                <div class="card-body">
                   <div class="row">
                      <div class="col">
-                        <center>
+                        <center class="zoomImg">
                            <img width="150px" src="imgs/adminlogin.png"/>
                         </center>
                      </div>
