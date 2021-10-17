@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About_Us.aspx" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="Admin_member_management.aspx" />
     <Content Include="All_Packages\DalLake.jpg" />
@@ -85,6 +86,7 @@
     <Content Include="bootstrap\js\popper.min.js" />
     <Content Include="Category_management.aspx" />
     <Content Include="css\customstylesheet.css" />
+    <Content Include="css\style.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
     <Content Include="fontawesome\attribution.js" />
@@ -1735,6 +1737,8 @@
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="homepage.aspx" />
+    <Content Include="imgs\about\user1.jpg" />
+    <Content Include="imgs\about\user2.jfif" />
     <Content Include="imgs\adminlogin.png" />
     <Content Include="imgs\adventure.png" />
     <Content Include="imgs\allpackages\enchantingooty.jpg" />
@@ -1803,6 +1807,13 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About_Us.aspx.cs">
+      <DependentUpon>About_Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About_Us.aspx.designer.cs">
+      <DependentUpon>About_Us.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
