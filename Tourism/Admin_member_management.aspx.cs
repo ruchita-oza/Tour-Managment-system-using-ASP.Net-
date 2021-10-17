@@ -30,7 +30,7 @@ namespace Tourism
         }
 
         // pending button
-        protected void TextBox8_TextChanged(object sender, EventArgs e)
+        protected void LinkButton2_Click(object sender, EventArgs e)
         {
             updateMemberStatusByID("pending");
         }
@@ -94,7 +94,7 @@ namespace Tourism
                         con.Open();
                     }
 
-                    SqlCommand cmd = new SqlCommand("DELETE from member_signup_table WHERE member_id='" + TextBox1.Text.Trim() + "'", con);
+                    SqlCommand cmd = new SqlCommand("DELETE from member_signup_tbl WHERE member_id='" + TextBox1.Text.Trim() + "'", con);
 
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -113,6 +113,7 @@ namespace Tourism
             {
                 Response.Write("<script>alert('Invalid Member ID');</script>");
             }
+            //Response.Write("<script>alert('testing');</script>");
         }
 
         void getMemberByID()
