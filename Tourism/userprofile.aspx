@@ -15,7 +15,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
+    <div class="container shadow p-3 mb-5 bg-body rounded">
       <div class="row">
          <div class="col-md-5">
             <div class="card-colum">

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="container">
+     <div class="container shadow p-3 mb-5 bg-body rounded">
       <div class="row">
          <div class="col-md-6 mx-auto">            
                   <div class="row">
@@ -33,23 +33,19 @@
                         <label>Password</label>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                        </div class="d-grid gap-2">
+                        </div >
                          <br />
-                         <br />  
                          <center>
-                             <div class="row">
+                             <div class="form-group">                             
                                 <asp:Button class="btn btn-secondary btn-block btn-lg" ID="Button1" runat="server" type="button" Text="Login" OnClick="Button1_Click" />
+                               <a href="usersignup.aspx"><input class="btn btn-dark btn-block btn-lg" id="Button2" type="button" value="Sign Up" /></a>                          
                             </div>
-                             <br />
-                            <div class="row">
-                               <a href="usersignup.aspx"><input class="btn btn-dark btn-lg btn-block" id="Button2" type="button" value="Sign Up" /></a>
-                            </div>
-                         </center>
-                        
+                        </center>
                      </div>
                   </div>
                </div>
             </div>
+         <br />
             <a href="homepage.aspx"><- Back to Home</a><br><br><br /><br />
          </div>
 </asp:Content>
