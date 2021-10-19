@@ -94,9 +94,10 @@
                   <div class="row">  
                       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tourismDBConnectionString %>" SelectCommand="SELECT * FROM [category_management_tbl]"></asp:SqlDataSource>
                      <div class="clearfix">
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="category_id" DataSourceID="SqlDataSource1">
+                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="category_id" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+                            <AlternatingRowStyle BackColor="#CCCCCC" />
                             <Columns>
-                                <asp:TemplateField HeaderText="category_id" SortExpression="category_id">
+                                <asp:TemplateField HeaderText="Category ID" SortExpression="category_id">
                                     <EditItemTemplate>
                                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("category_id") %>'></asp:Label>
                                     </EditItemTemplate>
@@ -104,7 +105,7 @@
                                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("category_id") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="category_name" SortExpression="category_name">
+                                <asp:TemplateField HeaderText="Category Name" SortExpression="category_name">
                                     <EditItemTemplate>
                                         <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("category_name") %>'></asp:TextBox>
                                     </EditItemTemplate>
@@ -113,6 +114,14 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
+                            <FooterStyle BackColor="#CCCCCC" />
+                            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                            <SortedAscendingHeaderStyle BackColor="#808080" />
+                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                            <SortedDescendingHeaderStyle BackColor="#383838" />
                         </asp:GridView>
                      </div>
                   </div>

@@ -60,7 +60,7 @@
                         <div class="form-group">                          
                               <asp:TextBox CssClass="form-control mr-1" ID="TextBox7" runat="server" placeholder="Account Status" ReadOnly="True"></asp:TextBox>
                               <asp:LinkButton class="btn btn-success mr-1" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click"><i class="fas fa-check-circle"></i></asp:LinkButton>
-                              <asp:LinkButton class="btn btn-warning mr-1" ID="LinkButton2" margin="auto" runat="server"><i class="far fa-pause-circle"></i></asp:LinkButton>
+                              <asp:LinkButton class="btn btn-warning mr-1" ID="LinkButton2" margin="auto" runat="server" OnClick="LinkButton2_Click"><i class="far fa-pause-circle"></i></asp:LinkButton>
                               <asp:LinkButton class="btn btn-danger mr-1" ID="LinkButton3" margin="auto" runat="server" OnClick="LinkButton3_Click"><i class="fas fa-times-circle"></i></asp:LinkButton>
                         </div>                        
                      </div>
@@ -70,7 +70,7 @@
                      <div class="col-md-3">
                         <label>DOB</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox8" runat="server" placeholder="DOB" ReadOnly="True" OnTextChanged="TextBox8_TextChanged"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox8" runat="server" placeholder="DOB" ReadOnly="True"></asp:TextBox>
                         </div>
                      </div>
                      <div class="col-md-4">
@@ -144,7 +144,8 @@
                   <div class="row">
                       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:tourismDBConnectionString2 %>" SelectCommand="SELECT * FROM [member_signup_tbl]"></asp:SqlDataSource>
                      <div class="col">
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="member_id" DataSourceID="SqlDataSource1">
+                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="member_id" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+                            <AlternatingRowStyle BackColor="#CCCCCC" />
                             <Columns>
                                 <asp:BoundField DataField="member_id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="member_id" />
                                 <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
@@ -154,6 +155,14 @@
                                 <asp:BoundField DataField="state" HeaderText="State" SortExpression="state" />
                                 <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
                             </Columns>
+                            <FooterStyle BackColor="#CCCCCC" />
+                            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                            <SortedAscendingHeaderStyle BackColor="#808080" />
+                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                            <SortedDescendingHeaderStyle BackColor="#383838" />
                          </asp:GridView>
                      </div>
                   </div>
