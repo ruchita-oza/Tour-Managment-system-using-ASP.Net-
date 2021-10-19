@@ -8,7 +8,7 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <img class="zoomImg" width="150px" src="imgs/login.png"/>
+                           <img  width="150px" src="imgs/login.png"/>
                         </center>
                      </div>
                   </div>

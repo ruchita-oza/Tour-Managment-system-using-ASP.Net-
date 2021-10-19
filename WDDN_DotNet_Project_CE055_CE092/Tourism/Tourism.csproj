@@ -85,9 +85,7 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
     <Content Include="Category_management.aspx" />
-    <Content Include="css\bg.css" />
     <Content Include="css\customstylesheet.css" />
-    <Content Include="css\SiteMaster.css" />
     <Content Include="css\style.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />

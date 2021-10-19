@@ -24,7 +24,11 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <%--datatables js--%>
     <script src="datatables/js/jquery.dataTables.min.js"></script>
-     <link rel="stylesheet" href="css/SiteMaster.css"/>
+     <style>
+         .body{
+             background: #E6E6FA;
+         }
+     </style>
     
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

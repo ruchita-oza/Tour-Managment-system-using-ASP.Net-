@@ -2,18 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">	
-	<style>
-		.card img{
-			 transition: 0.5s ease-in-out;
-}
-card img:hover {
-	    top: 0;
-    left: 0;
-    object-fit: cover;
-
-        transform: scale(1.1);
-}
-	</style>
 	<section class="Ready">
 		<div class="container shadow-sm p-3 mb-5 bg-body rounded">	
 			<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="package_category" DataValueField="package_category" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>            
@@ -21,7 +9,7 @@ card img:hover {
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">				
 				<ItemTemplate>					
 					<div class="international owl-carousel mb-5 p-3">				
-						<div class="card  px-1 shadow p-3" data-toggle="tooltip" title="Russia With Almaty">							
+						<div class="card px-1 shadow p-3" data-toggle="tooltip" title="Russia With Almaty">							
 								<asp:Image ID="Image1" class="img-fliud p-2" runat="server" ImageUrl='<%# Eval("images") %>' />                          
 							<div class="card-body" style="margin: -15px;">						
 								<h5 class="card-text font-weight-bold"><%#Eval("package_name") %></h5>
